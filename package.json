@@ -1,0 +1,86 @@
+{
+  "name": "backend-node",
+  "version": "0.0.0",
+  "description": "API",
+  "type": "module",
+  "imports": {
+    "#*.js": {
+      "node": "./dist/*.js",
+      "types": "./src/*.ts",
+      "default": "./dist/*.js"
+    },
+    "#*": {
+      "node": "./dist/*",
+      "types": "./src/*",
+      "default": "./dist/*"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev:build:ts": "tsc",
+    "start": "node --env-file=.env dist/servers/server.js",
+    "dev:run:ts": "tsx --env-file=.env --watch src/servers/server.ts",
+    "dev:format:fix": "prettier --write .",
+    "dev:run:lint": "eslint .",
+    "dev:run:lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "Maulik MK",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@azure/communication-email": "^1.1.0",
+    "@azure/cosmos": "^4.9.1",
+    "@azure/identity": "^4.13.0",
+    "@azure/storage-blob": "^12.30.0",
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/cors": "^11.2.0",
+    "@fastify/csrf-protection": "^7.1.0",
+    "@fastify/helmet": "^13.0.2",
+    "@fastify/multipart": "^9.4.0",
+    "@fastify/rate-limit": "^10.3.0",
+    "@fastify/sensible": "^6.0.4",
+    "@fastify/under-pressure": "^9.0.3",
+    "@sinclair/typebox": "^0.27.10",
+    "@toolkit-f/snowflake-id": "^1.0.3",
+    "bcrypt": "^6.0.0",
+    "bullmq": "^5.67.3",
+    "fastify": "^5.7.4",
+    "graphql": "^16.12.0",
+    "graphql-depth-limit": "^1.1.0",
+    "ioredis": "^5.9.2",
+    "mercurius": "^16.7.0",
+    "otplib": "^13.2.1",
+    "pg": "^8.18.0",
+    "pino": "^10.3.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.5",
+    "ua-parser-js": "^2.0.9"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/bcrypt": "^6.0.0",
+    "@types/graphql-depth-limit": "^1.1.6",
+    "@types/node": "^25.2.1",
+    "@types/pg": "^8.16.0",
+    "@types/qrcode": "^1.5.6",
+    "@types/ua-parser-js": "^0.7.39",
+    "eslint": "^10.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^17.3.0",
+    "pino-pretty": "^13.1.3",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "bcrypt",
+      "sharp"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+dist
+node_modules
+pnpm-lock
+pnpm-workspace
+tsconfig**
+package.json
+package-lock.json
+.env
+.env*
+eslint*
+.prettierrc
+*.yaml
